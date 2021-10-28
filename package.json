@@ -6,7 +6,7 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "server": "nodemon server"
+    "server": "nodemon src/server"
   },
   "dependencies": {
     "axios": "^0.24.0",
@@ -17,7 +17,6 @@
     "express": "^4.17.1",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^6.0.12",
-    "nodemon": "^2.0.14",
     "server": "^1.0.36",
     "vue": "^2.6.11",
     "vue-router": "^3.5.3"
@@ -29,6 +28,7 @@
     "babel-eslint": "^10.1.0",
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^6.2.2",
+    "nodemon": "^2.0.14",
     "vue-template-compiler": "^2.6.11"
   },
   "eslintConfig": {

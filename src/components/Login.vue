@@ -26,7 +26,7 @@ export default {
         email: this.email,
         password: this.password,
       };
-      axios.post("http://localhost:5002/login", user).then((res) => {
+      axios.post("http://localhost:5000/login", user).then((res) => {
         // if successful
         if (res.status === 200) {
           localStorage.setItem("token", res.data.token);

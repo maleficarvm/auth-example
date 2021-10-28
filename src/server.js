@@ -3,16 +3,16 @@ const mongoose = require("mongoose");
 const bcrypt = require("bcrypt");
 const bodyParser = require("body-parser");
 const cors = require("cors");
-const jwt = require("jsonwebtoken ");
+const jwt = require("jsonwebtoken");
 const User = require("../models/user");
 
-mongoose.connect("XXXXX");
+mongoose.connect("mongodb://127.0.0.1:27017/auth");
 
 const app = express();
 
 app.use(cors());
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
 
 app.post("/signup", (req, res, next) => {
   const newUser = new User({
@@ -34,9 +34,9 @@ app.post("/signup", (req, res, next) => {
   });
 });
 
-const port = process.env.PORT || 5002;
+const port = process.env.PORT || 5000;
 
-app.post("login", (req, res, next) => {
+app.post("/login", (req, res, next) => {
   User.findOne({ email: req.body.email }, (err, user) => {
     if (err)
       return res.status(500).json({
@@ -88,7 +88,7 @@ app.get("/user", (req, res, next) => {
 });
 
 app.get("/", (req, res, next) => {
-  res.send("hello");
+  res.send("Express server is running!");
 });
 
 app.listen(port, (err) => {

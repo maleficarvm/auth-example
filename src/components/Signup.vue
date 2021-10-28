@@ -30,7 +30,7 @@ export default {
         password: this.password,
       };
       console.log(newUser);
-      axios.post("http://localhost:5002/signup", newUser).then(
+      axios.post("http://localhost:5000/signup", newUser).then(
         (res) => {
           console.log(res);
           this.error = "";
